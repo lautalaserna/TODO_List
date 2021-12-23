@@ -7,7 +7,17 @@
         <title>TODO List</title>
     </head>
     <body>
-        <p>A tu vieja le gusta el <b>raviol</b></p>
-    </body> 
+        <form action="/add.php" method="get" class="formulario">  
+            <input class="texto" name="nuevo_todo" type="text">
+            <input class="submit" type="submit" value="Añadir">
+            <div class="list-container">
+                <ul class="lista-todo">
+                    <li class="todo"> Terminar el TODO LIST</li>
+                    <li class="todo"> Llorar un rato</li>
+                </ul>
+            </div>
+        </form>
+
+    </body>
     <script src="main.js"></script>
 </html>
