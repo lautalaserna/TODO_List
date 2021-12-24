@@ -1,3 +1,13 @@
+<?php
+    require "conn.php";
+    if(isset($_POST['nuevo_todo'])){
+        $task = $_POST['nuevo_todo'];
+        $insert = $conn->prepare("INSERT INTO tareas (tarea, terminado) VALUES (:tarea, false)");
+        $insert->execute([':tarea' => $task]);
+    }
+?>
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -7,7 +17,7 @@
         <title>TODO List</title>
     </head>
     <body>
-        <form action="add.php" method="post" class="formulario">  
+        <form action="index.php" method="POST" class="formulario">  
             <input class="texto" name="nuevo_todo" type="text">
             <input class="submit" type="submit" value="Añadir">
             <div class="list-container">
